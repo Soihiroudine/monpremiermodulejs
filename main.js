@@ -8,6 +8,14 @@ import {nom, utilisateur} from "./users.js";
 // Selection de la balise body
 let body = document.querySelector("body");
 
+
+// Une fonction qui créer un element p et qui lui assigne un contenu
+function paragraphe(valeur){
+    let p = document.createElement("p");
+    p.innerHTML = valeur;
+    return p;
+}
+
 // recuperation de l'id nom 
 let nomUtilisateur = document.querySelector("#nom");
 nomUtilisateur.textContent = nom; // On change le contenue 
@@ -17,16 +25,14 @@ let heure = document.querySelector("#heure");
 heure.textContent = getHeure(); 
 
 
-function paragraphe(valeur){
-    let p = document.createElement("p");
-    p.innerHTML = valeur;
-    return p;
-}
 // 2. Importer l'objet utilisateur
 
-let afficheUtilisateur = document.createElement("div");
-let texteH3 = document.createElement("h3");
-texteH3.textContent = "L'Utilisateur";
+let afficheUtilisateur = document.createElement("div"); // Création d'element div
+let texteH3 = document.createElement("h3"); // Créer un element h3 
+texteH3.textContent = "L'Utilisateur"; // Ajout de contenue dans la balise h3
+
+// Ajout dans l'element div
+afficheUtilisateur.appendChild(paragraphe(utilisateur.nom + " " + utilisateur.prenom + " habite à " + utilisateur.village))
 
 afficheUtilisateur.appendChild(paragraphe("Nom : " + utilisateur.nom));
 afficheUtilisateur.appendChild(paragraphe("Prenom : " + utilisateur.prenom));

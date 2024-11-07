@@ -8,7 +8,6 @@ export let nom = "Ali Bao";
     + prenom
     + village
 */
-
 export let utilisateur = {
     nom : "MOUSSA",
     prenom : "Soihiroudine",
